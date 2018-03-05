@@ -1,0 +1,100 @@
+@page
+@model SANoAuthFinalProj.Pages.DataPoints.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>DataPoint</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DataPoint.ID" class="control-label"></label>
+                <select asp-for="DataPoint.ID" class="form-control" asp-items="ViewBag.ID"></select>
+                <span asp-validation-for="DataPoint.ID" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="DataPoint.TimeStamp" />
+            <div class="form-group">
+                <label asp-for="DataPoint.Weight" class="control-label"></label>
+                <input asp-for="DataPoint.Weight" class="form-control" />
+                <span asp-validation-for="DataPoint.Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataPoint.BMI" class="control-label"></label>
+                <input asp-for="DataPoint.BMI" class="form-control" />
+                <span asp-validation-for="DataPoint.BMI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataPoint.CaloriesIn" class="control-label"></label>
+                <input asp-for="DataPoint.CaloriesIn" class="form-control" />
+                <span asp-validation-for="DataPoint.CaloriesIn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataPoint.CaloriesBurned" class="control-label"></label>
+                <input asp-for="DataPoint.CaloriesBurned" class="form-control" />
+                <span asp-validation-for="DataPoint.CaloriesBurned" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataPoint.Steps" class="control-label"></label>
+                <input asp-for="DataPoint.Steps" class="form-control" />
+                <span asp-validation-for="DataPoint.Steps" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataPoint.MinutesAsleep" class="control-label"></label>
+                <input asp-for="DataPoint.MinutesAsleep" class="form-control" />
+                <span asp-validation-for="DataPoint.MinutesAsleep" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataPoint.MinutesAwake" class="control-label"></label>
+                <input asp-for="DataPoint.MinutesAwake" class="form-control" />
+                <span asp-validation-for="DataPoint.MinutesAwake" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataPoint.FatConsumed" class="control-label"></label>
+                <input asp-for="DataPoint.FatConsumed" class="form-control" />
+                <span asp-validation-for="DataPoint.FatConsumed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataPoint.FiberConsumed" class="control-label"></label>
+                <input asp-for="DataPoint.FiberConsumed" class="form-control" />
+                <span asp-validation-for="DataPoint.FiberConsumed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataPoint.CarbsConsumed" class="control-label"></label>
+                <input asp-for="DataPoint.CarbsConsumed" class="form-control" />
+                <span asp-validation-for="DataPoint.CarbsConsumed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataPoint.SodiumConsumed" class="control-label"></label>
+                <input asp-for="DataPoint.SodiumConsumed" class="form-control" />
+                <span asp-validation-for="DataPoint.SodiumConsumed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataPoint.ProteinConsumed" class="control-label"></label>
+                <input asp-for="DataPoint.ProteinConsumed" class="form-control" />
+                <span asp-validation-for="DataPoint.ProteinConsumed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataPoint.WaterConsumed" class="control-label"></label>
+                <input asp-for="DataPoint.WaterConsumed" class="form-control" />
+                <span asp-validation-for="DataPoint.WaterConsumed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

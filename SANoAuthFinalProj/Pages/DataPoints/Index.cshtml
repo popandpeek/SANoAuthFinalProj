@@ -1,0 +1,108 @@
+@page
+@model SANoAuthFinalProj.Pages.DataPoints.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataPoint[0].Weight)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataPoint[0].BMI)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataPoint[0].CaloriesIn)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataPoint[0].CaloriesBurned)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataPoint[0].Steps)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataPoint[0].MinutesAsleep)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataPoint[0].MinutesAwake)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataPoint[0].FatConsumed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataPoint[0].FiberConsumed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataPoint[0].CarbsConsumed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataPoint[0].SodiumConsumed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataPoint[0].ProteinConsumed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataPoint[0].WaterConsumed)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.DataPoint) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BMI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CaloriesIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CaloriesBurned)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Steps)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinutesAsleep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinutesAwake)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FatConsumed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FiberConsumed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarbsConsumed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SodiumConsumed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProteinConsumed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WaterConsumed)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.TimeStamp">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.TimeStamp">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.TimeStamp">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

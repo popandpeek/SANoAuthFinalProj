@@ -1,0 +1,97 @@
+@page
+@model SANoAuthFinalProj.Pages.DataPoints.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DataPoint</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPoint.Weight)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataPoint.Weight)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPoint.BMI)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataPoint.BMI)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPoint.CaloriesIn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataPoint.CaloriesIn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPoint.CaloriesBurned)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataPoint.CaloriesBurned)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPoint.Steps)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataPoint.Steps)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPoint.MinutesAsleep)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataPoint.MinutesAsleep)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPoint.MinutesAwake)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataPoint.MinutesAwake)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPoint.FatConsumed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataPoint.FatConsumed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPoint.FiberConsumed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataPoint.FiberConsumed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPoint.CarbsConsumed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataPoint.CarbsConsumed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPoint.SodiumConsumed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataPoint.SodiumConsumed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPoint.ProteinConsumed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataPoint.ProteinConsumed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPoint.WaterConsumed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataPoint.WaterConsumed)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.DataPoint.TimeStamp">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
