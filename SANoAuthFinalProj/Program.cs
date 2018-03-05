@@ -28,7 +28,7 @@ namespace SANoAuthFinalProj
                     var context = services.GetRequiredService<SAAppContext>();
                     // requires using Microsoft.EntityFrameworkCore;
                     context.Database.Migrate();
-                    // Requires using RazorPagesMovie.Models;
+                    // Requires using SAANoAuthProj.Models;
                     SeedData.Initialize(services);
                 }
                 catch (Exception ex)
