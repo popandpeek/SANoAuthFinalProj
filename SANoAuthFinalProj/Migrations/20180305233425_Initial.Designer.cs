@@ -11,7 +11,7 @@ using System;
 namespace SANoAuthFinalProj.Migrations
 {
     [DbContext(typeof(SAAppContext))]
-    [Migration("20180305042227_Initial")]
+    [Migration("20180305233425_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -62,8 +62,7 @@ namespace SANoAuthFinalProj.Migrations
 
             modelBuilder.Entity("SANoAuthFinalProj.Models.Sensor", b =>
                 {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("ID");
 
                     b.Property<string>("Name")
                         .IsRequired();

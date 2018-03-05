@@ -43,9 +43,9 @@ namespace SANoAuthFinalProj.Pages.DataPoints
             findSensorByID.DataPoints.Add(DataPoint);
 
             // added commands to unlock/lock permissions to set ID params
-            _context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT dbo.DataPoint ON");
+            //_context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT dbo.DataPoint ON");
             await _context.SaveChangesAsync();
-            _context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT dbo.DataPoint OFF");
+            //_context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT dbo.DataPoint OFF");
 
             return RedirectToPage("./Index");
         }

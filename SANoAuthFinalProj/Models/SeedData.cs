@@ -42,9 +42,10 @@ namespace SANoAuthFinalProj.Models
                         DataPoints = new List<DataPoint>()
                     }
                 );
+
                 context.SaveChanges();
 
-                context.DataPoint.AddRange(GenerateRandomDataPoints(20));
+                // context.DataPoint.AddRange(GenerateRandomDataPoints(20));
 
                 context.SaveChanges();
             }

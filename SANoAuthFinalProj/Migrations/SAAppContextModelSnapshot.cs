@@ -61,8 +61,7 @@ namespace SANoAuthFinalProj.Migrations
 
             modelBuilder.Entity("SANoAuthFinalProj.Models.Sensor", b =>
                 {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("ID");
 
                     b.Property<string>("Name")
                         .IsRequired();
