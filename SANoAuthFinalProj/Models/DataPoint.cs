@@ -43,9 +43,9 @@ namespace SANoAuthFinalProj.Models
             // Default constructor
         }
 
-        [Required]
-        public int ID { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [ForeignKey("ID")]
+        public int ID { get; set; }
         [Key]
         public DateTime TimeStamp { get; set; }
         [DataMember]

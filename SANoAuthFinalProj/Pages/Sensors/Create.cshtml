@@ -14,6 +14,11 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
+                <label asp-for="Sensor.ID" class="control-label"></label>
+                <input asp-for="Sensor.ID" class="form-control" />
+                <span asp-validation-for="Sensor.ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Sensor.Name" class="control-label"></label>
                 <input asp-for="Sensor.Name" class="form-control" />
                 <span asp-validation-for="Sensor.Name" class="text-danger"></span>
