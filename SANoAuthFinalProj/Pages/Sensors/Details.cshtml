@@ -24,6 +24,14 @@
             @Html.DisplayFor(model => model.Sensor.Name)
         </dd>
     </dl>
+    <table>
+        <t>
+            @Html.DisplayNameFor(model => model.Sensor.DataPoints)
+        </t>
+        <t>
+            @Html.DisplayFor(model => model.Sensor.DataPoints)
+        </t>
+    </table>
 </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Sensor.ID">Edit</a> |

@@ -8,20 +8,25 @@
 <h2>Index</h2>
 
 <p>
+    <h4>Sensor</h4>
     <a asp-page="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Sensor[0].Name)
+                    @Html.DisplayNameFor(model => model.Sensor[0].ID)
                 </th>
-            <th></th>
+                <th>@Html.DisplayNameFor(model => model.Sensor[0].Name)
+            </th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.Sensor) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
