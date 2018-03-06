@@ -20,8 +20,6 @@ namespace SANoAuthFinalProj.Pages.Sensors
 
         public IList<DataPoint> DPList { get; set; }
 
-        public DataPoint DataPoint { get; set; }
-
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             // TO DO: 
@@ -38,7 +36,12 @@ namespace SANoAuthFinalProj.Pages.Sensors
                 return NotFound();
             }
 
-            DPList = await _context.DataPoint.ToListAsync(p => p.ID == id));
+            string query = "SELECT * FROM DataPoint WHERE ID = {0}";
+            DPList = await _context.DataPoint
+                .FromSql(query, id)
+                .Include(d => d.ID)
+                .AsNoTracking()
+                .ToListAsync();
 
             if (DPList == null)
             {

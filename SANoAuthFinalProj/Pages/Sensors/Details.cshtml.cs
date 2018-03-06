@@ -20,6 +20,8 @@ namespace SANoAuthFinalProj.Pages.Sensors
 
         public Sensor Sensor { get; set; }
 
+        public DataPoint DataPoint { get; set; }
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
