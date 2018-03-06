@@ -12,6 +12,5 @@
   <ItemGroup>
     <Folder Include="Controllers\NewFolder\" />
     <Folder Include="DataSets\" />
-    <Folder Include="Views\" />
   </ItemGroup>
 </Project>
