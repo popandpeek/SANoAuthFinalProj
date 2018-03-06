@@ -38,7 +38,7 @@ namespace SANoAuthFinalProj.Pages.Sensors
                 return NotFound();
             }
 
-            DPList = await _context.DataPoint.ToListAsync(p => p.ID == DataPoint.ID));
+            DPList = await _context.DataPoint.ToListAsync(p => p.ID == id));
 
             if (DPList == null)
             {
