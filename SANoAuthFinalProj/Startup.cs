@@ -48,6 +48,20 @@ namespace SANoAuthFinalProj
             app.UseStaticFiles();
 
             app.UseMvc();
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=LiveData}/{action=GetData}");
+            });
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=LiveData}/{action=Index}/{id?}");
+            });
         }
     }
 }
