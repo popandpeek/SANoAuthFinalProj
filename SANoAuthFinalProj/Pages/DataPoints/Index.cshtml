@@ -17,6 +17,9 @@
                 @Html.DisplayNameFor(model => model.DataPoint[0].ID)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.DataPoint[0].TimeStamp)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.DataPoint[0].Weight)
             </th>
             <th>
@@ -63,6 +66,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeStamp)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Weight)

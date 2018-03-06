@@ -15,5 +15,10 @@ namespace SANoAuthFinalProj.Models
 
         public DbSet<Sensor> Sensor { get; set; }
         public DbSet<DataPoint> DataPoint { get; set; }
+
+        internal Task Find(int iD)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
