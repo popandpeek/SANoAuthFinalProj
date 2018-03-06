@@ -14,40 +14,54 @@ namespace SANoAuthFinalProj.Models
             using (var context = new SAAppContext(
                 serviceProvider.GetRequiredService<DbContextOptions<SAAppContext>>()))
             {
-                // Look for any movies.
-                if (context.DataPoint.Any())
+                // if db contains any sesnors, 
+                if (context.Sensor.Any() == false)
                 {
-                    return;   // DB has been seeded
+
+                    context.Sensor.AddRange(
+                        new Sensor
+                        {
+                            Name = "FitBit",
+                            ID = 1,
+                            DataPoints = new List<DataPoint>()
+                        },
+                        new Sensor
+                        {
+                            Name = "PillBottle",
+                            ID = 2,
+                            DataPoints = new List<DataPoint>()
+                        },
+                        new Sensor
+                        {
+                            Name = "WeightSensor",
+                            ID = 3,
+                            DataPoints = new List<DataPoint>()
+                        },
+                        new Sensor
+                        {
+                            Name = "DoorSensor1",
+                            ID = 4,
+                            DataPoints = new List<DataPoint>()
+                        },
+                        new Sensor
+                        {
+                            Name = "DoorSensor2",
+                            ID = 5,
+                            DataPoints = new List<DataPoint>()
+                        }
+                    );
+
+                    context.SaveChanges();
                 }
 
-                context.Sensor.AddRange(
-                    new Sensor
-                    {
-                        Name = "FitBit",
-                        DataPoints = new List<DataPoint>()
-                    },
-                    new Sensor
-                    {
-                        Name = "PillBottle",
-                        DataPoints = new List<DataPoint>()
-                    },
-                    new Sensor
-                    {
-                        Name = "WeightSensor",
-                        DataPoints = new List<DataPoint>()
-                    },
-                    new Sensor
-                    {
-                        Name = "DoorSensor",
-                        DataPoints = new List<DataPoint>()
-                    }
-                );
+                // If Datapoints already exist, don't add any
+                if (context.DataPoint.Any() == false)
+                {
 
-                context.SaveChanges();
+                    context.DataPoint.AddRange(GenerateRandomDataPoints(20));
 
-                // context.DataPoint.AddRange(GenerateRandomDataPoints(20));
-
-                context.SaveChanges();
+                    context.SaveChanges();
+                }
             }
         }
 
