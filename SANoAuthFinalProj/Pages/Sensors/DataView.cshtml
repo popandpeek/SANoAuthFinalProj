@@ -1,107 +1,118 @@
 ﻿@page
 @model SANoAuthFinalProj.Pages.Sensors.DataViewModel
+
 @{
     ViewData["Title"] = "DataView";
 }
 
 <h2>DataView</h2>
 
-<div>
-    <h4>DataPoint</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.DPList.FirstOrDefault().TimeStamp)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DPList.FirstOrDefault().TimeStamp)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DPList.FirstOrDefault().ID)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DPList.FirstOrDefault().ID)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DPList.FirstOrDefault().Weight)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DPList.FirstOrDefault().Weight)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DPList.FirstOrDefault().BMI)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DPList.FirstOrDefault().BMI)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DPList.FirstOrDefault().CaloriesIn)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DPList.FirstOrDefault().CaloriesIn)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DPList.FirstOrDefault().CaloriesBurned)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DPList.FirstOrDefault().CaloriesBurned)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DPList.FirstOrDefault().Steps)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DPList.FirstOrDefault().Steps)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DPList.FirstOrDefault().MinutesAsleep)
-        <dd>
-            @Html.DisplayFor(model => model.DPList.FirstOrDefault().MinutesAsleep)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DPList.FirstOrDefault().MinutesAwake)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DPList.FirstOrDefault().MinutesAwake)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DPList.FirstOrDefault().FatConsumed)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DPList.FirstOrDefault().FatConsumed)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DPList.FirstOrDefault().FiberConsumed)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DPList.FirstOrDefault().FiberConsumed)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DPList.FirstOrDefault().CarbsConsumed)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DPList.FirstOrDefault().CarbsConsumed)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DPList.FirstOrDefault().SodiumConsumed)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DPList.FirstOrDefault().SodiumConsumed)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DPList.FirstOrDefault().ProteinConsumed)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DPList.FirstOrDefault().ProteinConsumed)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DPList.FirstOrDefault().WaterConsumed)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DPList.FirstOrDefault().WaterConsumed)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.DPList.FirstOrDefault().TimeStamp">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DPList[0].ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DPList[0].TimeStamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DPList[0].Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DPList[0].BMI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DPList[0].CaloriesIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DPList[0].CaloriesBurned)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DPList[0].Steps)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DPList[0].MinutesAsleep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DPList[0].MinutesAwake)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DPList[0].FatConsumed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DPList[0].FiberConsumed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DPList[0].CarbsConsumed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DPList[0].SodiumConsumed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DPList[0].ProteinConsumed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DPList[0].WaterConsumed)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.DPList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeStamp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Weight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BMI)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CaloriesIn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CaloriesBurned)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Steps)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MinutesAsleep)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MinutesAwake)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FatConsumed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FiberConsumed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarbsConsumed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SodiumConsumed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProteinConsumed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WaterConsumed)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.TimeStamp">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.TimeStamp">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.TimeStamp">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

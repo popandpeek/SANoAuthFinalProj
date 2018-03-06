@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SANoAuthFinalProj.Models;
 
@@ -17,6 +18,8 @@ namespace SANoAuthFinalProj.Pages.Sensors
         {
             _context = context;
         }
+
+        public DataPoint DataPoint { get; set; }
 
         public IList<DataPoint> DPList { get; set; }
 
@@ -39,7 +42,6 @@ namespace SANoAuthFinalProj.Pages.Sensors
             string query = "SELECT * FROM DataPoint WHERE ID = {0}";
             DPList = await _context.DataPoint
                 .FromSql(query, id)
-                .Include(d => d.ID)
                 .AsNoTracking()
                 .ToListAsync();
 
