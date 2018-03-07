@@ -27,7 +27,7 @@ namespace SANoAuthFinalProj
                 {
                     var context = services.GetRequiredService<SAAppContext>();
                     // requires using Microsoft.EntityFrameworkCore;
-                    context.Database.Migrate();
+                    //context.Database.Migrate(); //Nav: Disabled since it's causing an exception. Enable if needed
                     // Requires using SAANoAuthProj.Models;
                     SeedData.Initialize(services);
                 }

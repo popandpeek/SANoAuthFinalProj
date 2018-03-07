@@ -45,7 +45,7 @@ namespace SANoAuthFinalProj
             for (int i = 0; i < numberOfPoints; i++)
             {
                 var dataPt = GenerateRandomDataPoint();
-                dataPt.TimeStamp.Subtract(deltaTimeSpan * i); // Space the data points apart in time
+                dataPt.TimeStamp = dataPt.TimeStamp.Subtract(deltaTimeSpan * i); // Space the data points apart in time
                 dataPoints.Add(dataPt);
             }
 
@@ -68,6 +68,13 @@ namespace SANoAuthFinalProj
                 }
                 return d;
             }).ToList();
+        }
+
+        private static readonly DateTime UnixEpoch = new DateTime(1970, 1, 1);
+
+        public static long ToUnixTime(this DateTime dateTime)
+        {
+            return (dateTime - UnixEpoch).Ticks / TimeSpan.TicksPerMillisecond;
         }
     }
 }

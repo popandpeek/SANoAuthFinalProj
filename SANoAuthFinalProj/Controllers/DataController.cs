@@ -39,14 +39,27 @@ namespace SANoAuthFinalProj.Controllers
         public ActionResult GetHistoricalData(string columnName)
         {
             var dataPts = _context.DataPoint.ToList();
-            var f1 = dataPts.FilterProperties(new[]
+
+            var filteredDataPoints = dataPts.FilterProperties(new[]
             {
                 "TimeStamp", columnName
             });
+            List<Dictionary<string, object>> outputDataList = new List<Dictionary<string, object>>();
 
-            var jsonOut = JsonConvert.SerializeObject(f1);
+            foreach(var val in filteredDataPoints)
+            {
+                Dictionary<string, object> outputData = new Dictionary<string, object>();
+                //long thisTimeStamp = ((DateTime)val["TimeStamp"]).ToUnixTime();
+                outputData.Add("label", val["TimeStamp"]);
+                outputData.Add("y", val[columnName]);
+                outputDataList.Add(outputData);
+                //Convert.ChangeType(val["TimeStamp"], typeof(long));
+                //val["TimeStamp"] = thisTimeStamp;
+            }
+
+            var jsonOut = JsonConvert.SerializeObject(outputDataList);
             //dataPts[0].GetType().GetProperty(columnName).GetValue(dataPts[0])
-
+            ViewBag.DataType = columnName;
             ViewBag.DataPoints = jsonOut;
 
             return View("~/Views/HistoricalDataView.cshtml");

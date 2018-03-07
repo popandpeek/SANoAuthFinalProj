@@ -6,12 +6,13 @@
 <h2>HistoricalDataView</h2>
 
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<div id="chartContainer"></div>
+<div id="chartContainer" style="height: 400px; width: 90%; padding:initial"></div>
 <script type="text/javascript">
 
     window.onload = function () {
 
         var inputData = @Html.Raw(ViewBag.DataPoints);
+        //var subtitleText =  @Html.Raw(ViewBag.DataType);
 
 
         var chart = new CanvasJS.Chart("chartContainer", {
@@ -21,11 +22,11 @@
                 text: "Historical Patient Data"
             },
             //subtitles: [
-            //    { text: "Try Resizing the Browser" }
+            //    { text: subtitleText }
             //],
             data: [
                 {
-                    type: "column", //change type to bar, line, area, pie, etc
+                    type: "line", //change type to bar, line, area, pie, etc
                     dataPoints: inputData
                     //[
                     //    { x: 10, y: 71 },
