@@ -17,7 +17,6 @@ namespace SANoAuthFinalProj.Controllers
 
         private readonly SAAppContext _context;
 
-        IList DPList = new List<DataPoint>();
         public DataPointController(SAAppContext context)
         {
             _context = context;
@@ -32,7 +31,7 @@ namespace SANoAuthFinalProj.Controllers
 
         // GET api/<controller>/5
         [HttpGet("{id}", Name = "GetDataPoint")]
-        public IEnumerable<DataPoint> GetById(int? id)
+        public IEnumerable<DataPoint> GetById(int id)
         {
             // var List = _context.DataPoint.First(t => t.ID == id);
 
@@ -41,7 +40,7 @@ namespace SANoAuthFinalProj.Controllers
 
         // POST api/<controller>
         [HttpPost]
-        public IActionResult Create ([FromBody] DataPoint item)
+        public IActionResult Post([FromBody] DataPoint item)
         {
             if (item == null)
             {
@@ -60,10 +59,20 @@ namespace SANoAuthFinalProj.Controllers
         {
         }
 
-        // DELETE api/<controller>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //// DELETE api/<controller>/5
+        //[HttpDelete("{id}")]
+        //public IActionResult Delete(long DPID)
+        //{
+        //    var item = _context.DataPoint.FirstOrDefault(dt => dt.DPID == DPID);
+
+        //    if (item == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    _context.DataPoint.Remove(item);
+        //    _context.SaveChanges();
+        //    return new NoContentResult();
+        //}
     }
 }
