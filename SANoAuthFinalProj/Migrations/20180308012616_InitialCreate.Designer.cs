@@ -11,8 +11,8 @@ using System;
 namespace SANoAuthFinalProj.Migrations
 {
     [DbContext(typeof(SAAppContext))]
-    [Migration("20180306212045_Initial")]
-    partial class Initial
+    [Migration("20180308012616_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

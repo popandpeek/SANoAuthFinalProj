@@ -7,6 +7,8 @@
 
 <h2>DataView</h2>
 
+<a asp-page="./Index" class="btn btn-default">Back</a>
+
 <table class="table">
     <thead>
         <tr>
@@ -108,9 +110,9 @@
                     @Html.DisplayFor(modelItem => item.WaterConsumed)
                 </td>
                 <td>
-                    <a asp-page="./Edit" asp-route-id="@item.TimeStamp">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.TimeStamp">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.TimeStamp">Delete</a>
+                    <a asp-page="./Edit" asp-route-id="@item.TimeStamp" class="btn btn-default">Edit</a>
+                    <a asp-page="./Details" asp-route-id="@item.TimeStamp" class="btn btn-default">Details</a>
+                    <a asp-page="./Delete" asp-route-id="@item.TimeStamp" class="btn btn-default">Delete</a>
                 </td>
             </tr>
         }

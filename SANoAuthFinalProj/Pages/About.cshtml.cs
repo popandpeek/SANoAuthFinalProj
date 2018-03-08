@@ -12,7 +12,7 @@ namespace SANoAuthFinalProj.Pages
 
         public void OnGet()
         {
-            Message = "Your application description page.";
+            Message = "In-House Analytics - we grab YOUR data!";
         }
     }
 }

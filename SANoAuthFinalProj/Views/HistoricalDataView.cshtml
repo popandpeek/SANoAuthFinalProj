@@ -1,9 +1,10 @@
 ﻿
 @{
     ViewData["Title"] = "HistoricalDataView";
+    Layout = "~/Pages/_Layout.cshtml";
 }
 
-<h2>HistoricalDataView</h2>
+<h2>Historical Data View</h2>
 
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <div id="chartContainer" style="height: 400px; width: 90%; padding:initial"></div>
@@ -12,8 +13,6 @@
     window.onload = function () {
 
         var inputData = @Html.Raw(ViewBag.DataPoints);
-        //var subtitleText =  @Html.Raw(ViewBag.DataType);
-
 
         var chart = new CanvasJS.Chart("chartContainer", {
             theme: "theme2",

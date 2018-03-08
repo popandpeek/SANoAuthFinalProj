@@ -32,15 +32,11 @@ namespace SANoAuthFinalProj.Controllers
 
         // GET api/<controller>/5
         [HttpGet("{id}", Name = "GetDataPoint")]
-        public IActionResult GetById(int id)
+        public IEnumerable<DataPoint> GetById(int? id)
         {
-            var item = _context.DataPoint.First(t => t.ID == id);
-            if (item == null)
-            {
-                return NotFound();
-            }
+            // var List = _context.DataPoint.First(t => t.ID == id);
 
-            return new ObjectResult(item);
+            return _context.DataPoint.ToList().FindAll(t => t.ID == id);
         }
 
         // POST api/<controller>
